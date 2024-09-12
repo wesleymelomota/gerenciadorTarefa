@@ -1,19 +1,16 @@
 package com.sistema.gerenciador.tarefa.gerenciadorTarefa.controller;
 
-import com.sistema.gerenciador.tarefa.gerenciadorTarefa.DTO.ItemDto;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.DTO.ListaDto;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.model.Item;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.model.Lista;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.service.ListaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/listas")
-public class ListaController {
+public class ListaController  {
 
     private final ListaService service;
     public ListaController(ListaService service){
