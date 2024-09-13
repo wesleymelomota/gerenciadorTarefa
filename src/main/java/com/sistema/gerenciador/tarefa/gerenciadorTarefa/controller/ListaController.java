@@ -1,6 +1,7 @@
 package com.sistema.gerenciador.tarefa.gerenciadorTarefa.controller;
 
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.DTO.ListaDto;
+import com.sistema.gerenciador.tarefa.gerenciadorTarefa.DTO.ListaDtoUpdate;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.model.Item;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.model.Lista;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.service.ListaService;
@@ -31,6 +32,10 @@ public class ListaController  {
         return service.encontrarTarefaPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<Integer> atualizarLista(@PathVariable Integer id, @RequestBody ListaDtoUpdate lista){
+        return ResponseEntity.ok(service.atualizarLista(id, lista));
     }
     @GetMapping("/{id}/itens")
     public ResponseEntity<List<Item>> obterItensOrdenados(@PathVariable Integer id) {
