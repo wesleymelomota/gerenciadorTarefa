@@ -3,6 +3,7 @@ package com.sistema.gerenciador.tarefa.gerenciadorTarefa.service;
 
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.DTO.ItemDto;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.DTO.ListaDto;
+import com.sistema.gerenciador.tarefa.gerenciadorTarefa.DTO.ListaDtoUpdate;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.model.Item;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.model.Lista;
 import com.sistema.gerenciador.tarefa.gerenciadorTarefa.repository.Listas;
@@ -25,11 +26,13 @@ public class ListaService {
 
     public Integer salvarLista(ListaDto listaDto){
         Lista lista = new Lista();
-        if(listaDto.getId() != null){
-            lista.setId(listaDto.getId());
-        }
         lista.setNome(listaDto.getNome());
         lista.setItens(lista.getItens());
+        return repository.save(lista).getId();
+    }
+    public Integer atualizarLista(Integer id, ListaDtoUpdate listaDto){
+        Lista lista = repository.findByid(id);
+        lista.setNome(listaDto.getNome());
         return repository.save(lista).getId();
     }
     public List<Item> obterItensOrdenadosPorPrioridade(Integer listaId) {
