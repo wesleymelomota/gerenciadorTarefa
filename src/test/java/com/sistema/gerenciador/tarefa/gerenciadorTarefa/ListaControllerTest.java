@@ -42,11 +42,13 @@ public class ListaControllerTest {
     @Test
     public void shouldCreateNewList() throws Exception {
         Item item1 = new Item();
+        item1.setId(1);
         item1.setTitulo("tarefa");
         item1.setDescricao("fazer tarefa");
         item1.setPrioridade(false);
         item1.setEstado(EstadoItem.CONCLUIDO);
         Item item2 = new Item();
+        item2.setId(2);
         item2.setTitulo("tarefa 2");
         item2.setDescricao("fazer tarefa 2");
         item2.setPrioridade(false);
