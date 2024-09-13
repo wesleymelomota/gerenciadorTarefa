@@ -11,7 +11,7 @@ Este é um sistema de gerenciamento de tarefas que permite aos usuários criar e
 - Ordenação e Destaque: Itens destacados são priorizados na visualização.
 - Persistência de Dados: As listas e itens são armazenados de forma persistente.
 - API REST: A aplicação expõe uma API para operações CRUD.
-- Interface Angular: Interface web construída com Angular 9 para interação com a API.
+- Interface React: Interface web construída com React para interação com a API.
 
 
 ## Requisitos
